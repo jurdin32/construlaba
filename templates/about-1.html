@@ -1,0 +1,253 @@
+{% extends 'index.html' %}
+{% block principal %}
+        
+        <!-- CONTENT START -->
+        <div class="page-content">
+        
+
+             
+            <!-- ABOUT COMPANY SECTION START -->
+            <div class="section-full p-tb80 bg-white inner-page-padding">
+                <div class="container">
+                    <!-- TITLE START -->
+					<div class="section-head">
+						<div class="mt-separator-outer separator-left">
+							<div class="mt-separator">
+								<h2 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">ACERCA DE LA</span> EMPRESA</h2>
+							</div>
+						</div>
+					</div>                   
+                    <!-- TITLE END -->                 
+                    <div class="section-content ">
+                    	<div class="row">
+                        	<div class="col-md-5 col-sm-6">
+                            	<div class="m-about ">
+                            		<div class="owl-carousel about-us-carousel">
+                                        {% for galeria in galeria_construlaba %}
+                                            <!-- COLUMNS 1 -->
+                                            <div class="item">
+                                                <div class="ow-img">
+                                                    <a href="javascript:void(0);"><img src="/media/{{ galeria.imagen }}" alt=""></a>
+                                                </div>
+                                            </div>
+
+                                        {% endfor %}
+
+
+
+                                   </div>
+                               </div>
+                            </div>                        
+                    		<div class="col-md-7 col-sm-6">
+                            	<div class="m-about-containt text-black p-t80">
+
+                                	<div class="m-about-years bg-moving" style="background-image:url(/static/images/background/line.png);">
+                                        <span class="text-primary large-title">  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; </span>
+                                    </div>
+                                     <img src="/media/{{ construlaba.logo_1 }}" style="margin-top: -50px" alt="Construlaba" width="250" >
+                                    <br>
+                                    <h3 class="font-weight-600">MISIÓN</h3>
+                                    <p>{{ construlaba.mision }}</p>
+
+                                    <h3 class="font-weight-600">VISIÓN</h3>
+                                    <p>{{ construlaba.vision }}</p>
+
+                                    <div class="author-info p-t20" style="text-align: center">
+
+										<a href="javascript:void(0);" class="site-button btn-effect m-b15"><span>Contáctanos</span></a>
+                                        
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>                           
+
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <!-- ABOUT COMPANY SECTION END -->
+            
+            <!-- OUR SPECIALLIZATION START -->
+            <div class="section-full p-tb80 bg-white bg-repeat square_shape2 inner-page-padding"  style="background-image:url(/static/images/background/ptn-1.png)">
+
+				<div class="container">
+
+                <!-- TITLE START -->
+					<div class="section-head">
+						<div class="mt-separator-outer separator-center">
+							<div class="mt-separator">
+                                <h2  STYLE="text-align: center" class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary"></span>HORMIGÓN</h2>
+							</div>
+						</div>
+					</div>
+                    <!-- TITLE END -->
+
+                    <!-- TITLE START -->
+					<div class="section-head">
+						<div class="mt-separator-outer separator-left">
+							<div class="mt-separator">
+								<H4 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">NUESTRA </span> ESPECIALIZACIÓN</H4>
+							</div>
+						</div>
+					</div>                   
+                    <!-- TITLE END --> 
+     
+                    <!-- IMAGE CAROUSEL START -->
+                    <div class="section-content">
+                            <div class="row">
+                                {% for produc in productos %}
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="mt-icon-box-wraper m-b30">
+                                            <div class="relative icon-count-2 bg-gray p-a30 p-tb50">
+                                                <span class="icon-count-number">{{ produc.orden}}</span>
+                                                <div class="icon-md inline-icon m-b15 text-primary scale-in-center">
+                                                    <span class="icon-cell"><img src="/static/images/icon/crane-1.png" alt=""></span>
+                                                </div>
+                                                <div class="icon-content">
+                                                    <h4 style="text-align: center">Resistencia <br></h4>
+                                                    <h3 style="text-align: center"><strong>{{ produc.resistencia}}</strong></h3>
+                                                    <p>{{ produc.detalle}}</p>
+                                                    <a href="#" class="site-button-link" data-hover="Read More">Leer más <i class="fa fa-angle-right arrow-animation"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                    </div>
+                </div>
+                
+             </div>   
+            <!-- OUR SPECIALLIZATION END -->            
+             
+            <!-- OUR TEAM START -->
+            <div class="section-full p-t80 p-b50 bg-white inner-page-padding">
+				<div class="container">
+                    <!-- TITLE START -->
+					<div class="section-head">
+						<div class="mt-separator-outer separator-left">
+							<div class="mt-separator">
+								<h2 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">NUESTRO </span> EQUIPO</h2>
+							</div>
+						</div>
+					</div>                   
+                    <!-- TITLE END -->               
+     
+                    <!-- IMAGE Team START -->
+                    <div class="section-content">
+                        <div class="row">
+                            {% for equi in equipo %}
+                                <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30   ">
+                                    <div class="our-team-1 hover-animation-1">
+                                        <div class="profile-image scale-in-center">
+                                            <img src="/media/{{ equi.imagen }}" alt="" />
+                                        </div>
+
+                                        <div class="figcaption">
+                                            <h4>{{ equi.nombre }}</h4>
+                                            <h5>{{ equi.cargo }}</h5>
+                                            <p>{{ equi.detalle}}</p>
+
+                                            <div class="icons">
+                                                <i class="fa fa-globe"> &nbsp;  {{ equi.correo}} &nbsp;</i>
+                                                <i class="fa fa-phone"> &nbsp;  {{ equi.celular}}</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- OUR TEAM END -->
+
+            <hr>
+
+            <div class="section-full p-t80 p-b50 bg-white inner-page-padding">
+
+				<div class="container">
+
+
+                    <!-- IMAGE CAROUSEL START -->
+                    <div class="section-content">
+                    	<div class="row">
+                            <div class="col-md-6 col-sm-6">
+
+                              <!-- TITLE START -->
+                                <div class="section-head">
+                                    <div class="mt-separator-outer separator-left">
+                                        <div class="mt-separator">
+                                            <h2 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">CONSTRULABA</span> S.A. </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- TITLE END -->
+
+                                <div class="section-content p-b30">
+                                    <br><br>
+                                    <p style="text-align: justify"> {{ construlaba.nosotros  }} </p>
+                               </div>
+                            </div>
+                        <div class="col-md-6 col-sm-6">
+
+                              <!-- TITLE START -->
+                                <div class="section-head">
+                                    <div class="mt-separator-outer separator-left">
+                                        <div class="mt-separator">
+                                            <h2 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">Cotización</span>  Web</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- TITLE END -->
+                                <div class="row">
+                                	<div class="col-md-6">
+                            			<div class="mt-icon-box-wraper p-a25 m-b30 onhover-box-shadow bg-primary center">
+                                            <a href="#">
+                                            <div class="mt-icon-box-sm inline-icon text-primary  m-b20 radius bg-secondry  scale-in-center">
+                                                <span class="icon-cell text-primary"><i class="fa fa-book"></i></span>
+                                            </div>
+
+                                                <div class="icon-content text-black">
+                                                    <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">COTIZACIÓN ONLINE</h4>
+                                                    <a href="#" class="site-button-link "  data-hover="Read More">Ir<i class="fa fa-angle-right arrow-animation"></i></a>
+                                                </div>
+
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                            			<div class="mt-icon-box-wraper p-a25 m-b30 onhover-box-shadow bg-dark center">
+                                            <div class="mt-icon-box-sm inline-icon text-primary  m-b20 radius bg-secondry  scale-in-center">
+                                                <span class="icon-cell text-primary"><i class="fa fa-whatsapp"></i></span>
+                                            </div>
+                                            <div class="icon-content text-white">
+                                                <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">CONTÁCTANOS</h4>
+                                                <a href="#" class="site-button-link yellow" data-hover="Read More">Ir <i class="fa fa-angle-right arrow-animation"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+             </div>
+            <!-- FAQ -->
+
+
+
+
+
+
+        </div>
+
+
+            
+        </div>
+        <!-- CONTENT END -->
+{% endblock %}

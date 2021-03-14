@@ -1,0 +1,115 @@
+{% extends 'index.html' %}
+{% block principal %}
+        
+        <!-- CONTENT START -->
+        <div class="page-content">
+            <!-- INNER PAGE BANNER -->
+            <div class="mt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(/static/images/banner/12-02.png);">
+            	<div class="overlay-main bg-black opacity-03"></div>
+                <div class="container">
+                    <div class="mt-bnr-inr-entry">
+                    	<div class="banner-title-outer">
+                        	<div class="banner-title-name">
+                        		<h2 class="m-b0">{{ proyectos.nombre_proyecto }}</h2>
+                            </div>
+                        </div>
+                        <!-- BREADCRUMB ROW -->                            
+                        
+
+                        
+                        <!-- BREADCRUMB ROW END -->                        
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+            
+			<!-- SECTION CONTENT START -->
+            <div class="section-full p-tb80 inner-page-padding">
+            	<div class="container">
+                    <div class="project-detail-outer">
+
+                    	<div class="m-b30">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="product-block">
+                                        <div class="row">
+                                          <div class="col-md-12 m-b10">
+                                            <h4 class="text-uppercase font-weight-600 m-b10">FECHA</h4>
+                                            <p>{{ proyectos.fecha }}</p>
+                                          </div>
+                                          <div class="col-md-12 m-b10">
+                                            <h4 class="text-uppercase font-weight-600 m-b10">CLIENTE</h4>
+                                            <p>{{ proyectos.cliente }}</p>
+                                           </div>
+                                          <div class="col-md-12 m-b10">
+                                            <h4 class="text-uppercase font-weight-600 m-b10">TIPO DE PROYECTO</h4>
+                                            <p>{{ proyectos.tipo_proyecto }}</p>
+                                          </div>
+                                          <div class="col-md-12 m-b10">
+                                            <h4 class="text-uppercase font-weight-600 m-b10">LOCALIZACIÓN</h4>
+                                            <p>{{ proyectos.lugar }}</p>
+                                          </div>
+
+                                      </div>
+                                    </div>  
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="mt-box">
+                                        <div class="mt-thum-bx mt-img-overlay1 mt-img-effect yt-thum-box"  >
+                                            {% if proyectos.imagen_centro %}
+                                                <img src="/media/{{ proyectos.imagen_centro }}" width="20px" height="10px" alt="">
+                                                    <i class="icon fa fa-play"></i>
+                                                    <span class="ripple"></span>
+                                            {% else %}
+                                                <a>
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ proyectos.video_youtube }}?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </a>
+                                            {% endif %}
+
+                                        </div>
+                                    </div>                   	
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-b0">
+                            <div class="row">
+
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="project-detail-pic m-b30">
+                                            <div class="mt-media">
+                                                <img src="/media/{{ proyectos.imagen_1 }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="project-detail-pic m-b30">
+                                            <div class="mt-media">
+                                                <img src="/media/{{ proyectos.imagen_2 }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="project-detail-pic m-b30">
+                                            <div class="mt-media">
+                                                <img src="/media/{{ proyectos.imagen_3 }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% if direc.planta %}
+
+
+                                    {% else %}
+                                    {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SECTION CONTENT END  -->
+        </div>
+        <!-- CONTENT END -->
+{% endblock %}
